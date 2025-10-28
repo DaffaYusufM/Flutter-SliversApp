@@ -10,10 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Icons & chart libraries (null-safety compatible)
+  # ✅ Library yang modern dan null-safety
   cupertino_icons: ^1.0.8
-  font_awesome_flutter: ^10.7.0
-  fl_chart: ^0.65.0   # pengganti flutter_sparkline (mendukung null safety)
+  font_awesome_flutter: ^10.12.0
+  fl_chart: ^0.65.0   # ✅ pengganti flutter_sparkline (mendukung web & null safety)
 
 dev_dependencies:
   flutter_test:

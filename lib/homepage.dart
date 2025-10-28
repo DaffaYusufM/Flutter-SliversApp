@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'myflexiableappbar.dart';
 import 'myappbar.dart';
-import 'package:flutter_sparkline/flutter_sparkline.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -134,11 +134,28 @@ Widget myGraphDetails(List<double> data) {
   return Container(
     width: 80.0,
     height: 50.0,
-    child: Sparkline(
-      data: data,
-      lineColor: Color(0xff013db7),
-      fillMode: FillMode.below,
-      fillColor: Colors.blue[100],
+    child: LineChart(
+      LineChartData(
+        gridData: FlGridData(show: false),
+        titlesData: FlTitlesData(show: false),
+        borderData: FlBorderData(show: false),
+        lineBarsData: [
+          LineChartBarData(
+            isCurved: true,
+            color: const Color(0xff013db7),
+            barWidth: 2,
+            isStrokeCapRound: true,
+            belowBarData: BarAreaData(
+              show: true,
+              color: Colors.blue.withOpacity(0.3),
+            ),
+            spots: [
+              for (int i = 0; i < data.length; i++)
+                FlSpot(i.toDouble(), data[i]),
+            ],
+          ),
+        ],
+      ),
     ),
   );
 }
