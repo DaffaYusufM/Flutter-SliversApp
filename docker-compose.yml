@@ -2,6 +2,6 @@ version: "3.9"
 services:
  flappy:
  build:
- image: daffayusufm/flutter-sliversapp:latest
+ image: daffayusufm/flutter-sliversapp:dev
  ports:
  - "8081:80"
